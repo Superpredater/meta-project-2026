@@ -1,0 +1,4 @@
+# file: C:\Users\sanja\Desktop\meta\baseline.py
+# hypothesis_version: 6.151.9
+
+[0.0, 'OPENAI_API_KEY', '__main__', 'categorize_easy', 'content', 'gpt-4o-mini', 'manage_hard', 'mean_score', 'model', 'role', 'system', 'task_scores', 'timestamp', 'triage_medium', 'user', 'utf-8', 'w']

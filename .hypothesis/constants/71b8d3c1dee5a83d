@@ -1,0 +1,4 @@
+# file: C:\Users\sanja\Desktop\meta\openenv_email_triage\graders.py
+# hypothesis_version: 6.151.9
+
+[0.0, 0.5, 1.0, 2.0, '<unknown>', 'categorization', 'categorize', 'label', 'prioritize', 'priority', 'reply', 'reply_required']

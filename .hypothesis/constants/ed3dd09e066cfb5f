@@ -1,0 +1,4 @@
+# file: C:\Users\sanja\Desktop\meta\openenv_email_triage\models.py
+# hypothesis_version: 6.151.9
+
+[0.0, 1.0, 'archive', 'categorize', 'delete', 'escalate', 'prioritize', 'reply', 'skip']
