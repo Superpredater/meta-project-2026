@@ -111,7 +111,6 @@ export default function EpisodeCompleteModal({ reward, history, onRestart, onSel
               <div className="flex flex-col gap-1 max-h-48 overflow-y-auto pr-0.5">
                 {history.map((entry) => {
                   const ok = isSuccess(entry.score)
-                  const es = scoreStyle(entry.score)
                   return (
                     <div key={entry.step} className={`flex items-start gap-2.5 rounded-lg px-3 py-2 border ${ok ? 'border-emerald-500/20 bg-emerald-900/10' : 'border-rose-500/20 bg-rose-900/10'}`}>
                       <span className="text-sm shrink-0 mt-0.5">{EMOJI[entry.operation] ?? '•'}</span>
