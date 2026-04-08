@@ -151,7 +151,7 @@ docker run -p 7860:7860 -e OPENAI_API_KEY=sk-... openenv-email-triage
 
 ### Hugging Face Space
 
-The environment is hosted at: https://huggingface.co/spaces/openenv/openenv-email-triage
+The environment is hosted at: https://huggingface.co/spaces/Superpredater231/openenv-email-triage
 
 The Space uses the `docker` SDK. The `Dockerfile` at the repository root is the entry point.
 

@@ -4,7 +4,7 @@ description: "Inbox management RL environment with three tasks of increasing dif
 observation_space: openenv_email_triage.models.Observation
 action_space: openenv_email_triage.models.Action
 reward_range: [0.0, 1.0]
-space_url: "https://huggingface.co/spaces/openenv/openenv-email-triage"
+space_url: "https://huggingface.co/spaces/Superpredater231/openenv-email-triage"
 tasks:
   - id: categorize_easy
     difficulty: easy
