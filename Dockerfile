@@ -15,4 +15,4 @@ COPY . .
 # Copy built frontend into static/
 COPY --from=frontend-builder /app/frontend/../static ./static
 EXPOSE 7860
-CMD ["python", "main.py"]
+CMD ["python", "inference.py"]
