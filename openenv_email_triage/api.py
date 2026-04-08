@@ -118,6 +118,53 @@ def get_observation():
         raise HTTPException(status_code=500, detail=str(exc))
 
 
+@app.get("/metadata")
+def metadata():
+    """Return environment metadata."""
+    return {
+        "name": "openenv-email-triage",
+        "description": "Inbox management RL environment with three tasks of increasing difficulty.",
+        "version": "1.0.0",
+        "observation_space": "openenv_email_triage.models.Observation",
+        "action_space": "openenv_email_triage.models.Action",
+        "reward_range": [0.0, 1.0],
+    }
+
+
+@app.get("/schema")
+def schema():
+    """Return JSON schemas for action, observation, and state."""
+    from openenv_email_triage.models import Action, Observation
+    
+    return {
+        "action": Action.model_json_schema(),
+        "observation": Observation.model_json_schema(),
+        "state": {
+            "type": "object",
+            "properties": {
+                "task_id": {"type": "string"},
+                "step": {"type": "integer"},
+                "done": {"type": "boolean"},
+                "inbox_size": {"type": "integer"},
+                "history": {"type": "array"}
+            }
+        }
+    }
+
+
+@app.post("/mcp")
+def mcp(request: dict):
+    """MCP (Model Context Protocol) JSON-RPC endpoint."""
+    return {
+        "jsonrpc": "2.0",
+        "id": request.get("id", 1),
+        "result": {
+            "status": "ok",
+            "message": "MCP endpoint available"
+        }
+    }
+
+
 @app.get("/health")
 def health():
     """Health check endpoint."""
