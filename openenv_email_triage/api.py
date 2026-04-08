@@ -76,7 +76,7 @@ def step(action: Action):
         raise HTTPException(status_code=400, detail=str(exc))
     return {
         "observation": obs.model_dump(mode="json") if obs is not None else None,
-        "reward": reward.model_dump(mode="json"),
+        "reward": float(reward.score),  # OpenEnv requires float between 0.0 and 1.0
         "done": done,
         "info": info,
     }
