@@ -1,0 +1,17 @@
+name: openenv-email-triage
+version: "1.0.0"
+description: "Inbox management RL environment with three tasks of increasing difficulty."
+observation_space: openenv_email_triage.models.Observation
+action_space: openenv_email_triage.models.Action
+reward_range: [0.0, 1.0]
+space_url: "https://huggingface.co/spaces/Superpredater231/openenv-email-triage"
+tasks:
+  - id: categorize_easy
+    difficulty: easy
+    description: "Assign a single correct label to each of 10 emails."
+  - id: triage_medium
+    difficulty: medium
+    description: "Assign priority and draft replies for 15 emails with mixed urgency."
+  - id: manage_hard
+    difficulty: hard
+    description: "Apply all six operations across 25 emails to reach a clean inbox state."

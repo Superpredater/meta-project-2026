@@ -1,0 +1,203 @@
+{
+  "checksum": "f18842181eb4de8c3ab57ddf2e98cbb6f9f3818d518ccb5f3f84adb8107ea3ae",
+  "emails": [
+    {
+      "attachments": [],
+      "body": "Congratulations! Click here to claim your prize. Limited time offer.",
+      "id": "e001",
+      "labels": [],
+      "sender": "promo@deals-unlimited.biz",
+      "subject": "You've won a $1000 gift card!",
+      "thread_id": "t001",
+      "timestamp": "2024-01-15T08:00:00Z"
+    },
+    {
+      "attachments": [
+        "invoice_4821.pdf"
+      ],
+      "body": "Please find attached your invoice for January. Payment due by Feb 1.",
+      "id": "e002",
+      "labels": [],
+      "sender": "billing@acmecorp.com",
+      "subject": "Invoice #4821 for January services",
+      "thread_id": "t002",
+      "timestamp": "2024-01-15T08:30:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "Hi, I cannot log in to my account. I've tried resetting my password but it's not working.",
+      "id": "e003",
+      "labels": [],
+      "sender": "alice.johnson@example.com",
+      "subject": "My account is locked \u2014 urgent help needed",
+      "thread_id": "t003",
+      "timestamp": "2024-01-15T09:00:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "Buy Viagra, Cialis and more at 90% off. No doctor visit required. Order now!",
+      "id": "e004",
+      "labels": [],
+      "sender": "noreply@pharma-deals.net",
+      "subject": "Cheap meds \u2014 no prescription needed",
+      "thread_id": "t004",
+      "timestamp": "2024-01-15T09:15:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "Hey everyone, we're doing a team lunch this Friday at noon. Please RSVP by Thursday.",
+      "id": "e005",
+      "labels": [],
+      "sender": "manager@company.com",
+      "subject": "Team lunch this Friday",
+      "thread_id": "t005",
+      "timestamp": "2024-01-15T09:30:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "Your subscription payment failed. Please update your payment method to avoid service interruption.",
+      "id": "e006",
+      "labels": [],
+      "sender": "billing@saas-platform.io",
+      "subject": "Payment failed \u2014 please update your card",
+      "thread_id": "t006",
+      "timestamp": "2024-01-15T10:00:00Z"
+    },
+    {
+      "attachments": [
+        "crash_log.txt"
+      ],
+      "body": "When I try to export a report with more than 10,000 rows the app crashes. Steps to reproduce attached.",
+      "id": "e007",
+      "labels": [],
+      "sender": "bob.smith@clientco.com",
+      "subject": "Bug report: export feature crashes on large files",
+      "thread_id": "t007",
+      "timestamp": "2024-01-15T10:30:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "Your domain example.com expires in 7 days. Renew now to avoid losing it.",
+      "id": "e008",
+      "labels": [],
+      "sender": "noreply@registrar-alerts.com",
+      "subject": "Reminder: renew your domain before it expires",
+      "thread_id": "t008",
+      "timestamp": "2024-01-15T11:00:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "Hi support team, I'm trying to connect your API to Zapier but can't find the webhook URL. Can you help?",
+      "id": "e009",
+      "labels": [],
+      "sender": "carol.white@startup.io",
+      "subject": "How do I integrate the API with Zapier?",
+      "thread_id": "t009",
+      "timestamp": "2024-01-15T11:30:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "Just a reminder that the office will be closed this Monday for the public holiday. Enjoy the long weekend!",
+      "id": "e010",
+      "labels": [],
+      "sender": "hr@company.com",
+      "subject": "Office closed on Monday for public holiday",
+      "thread_id": "t010",
+      "timestamp": "2024-01-15T12:00:00Z"
+    }
+  ],
+  "fixture_version": "1.0.0",
+  "ground_truth": [
+    {
+      "email_id": "e001",
+      "escalate": false,
+      "label": "spam",
+      "priority": null,
+      "reply_required": false,
+      "should_archive": false,
+      "should_delete": true
+    },
+    {
+      "email_id": "e002",
+      "escalate": false,
+      "label": "billing",
+      "priority": null,
+      "reply_required": false,
+      "should_archive": true,
+      "should_delete": false
+    },
+    {
+      "email_id": "e003",
+      "escalate": false,
+      "label": "support",
+      "priority": null,
+      "reply_required": true,
+      "should_archive": false,
+      "should_delete": false
+    },
+    {
+      "email_id": "e004",
+      "escalate": false,
+      "label": "spam",
+      "priority": null,
+      "reply_required": false,
+      "should_archive": false,
+      "should_delete": true
+    },
+    {
+      "email_id": "e005",
+      "escalate": false,
+      "label": "general",
+      "priority": null,
+      "reply_required": false,
+      "should_archive": true,
+      "should_delete": false
+    },
+    {
+      "email_id": "e006",
+      "escalate": false,
+      "label": "billing",
+      "priority": null,
+      "reply_required": true,
+      "should_archive": false,
+      "should_delete": false
+    },
+    {
+      "email_id": "e007",
+      "escalate": false,
+      "label": "support",
+      "priority": null,
+      "reply_required": true,
+      "should_archive": false,
+      "should_delete": false
+    },
+    {
+      "email_id": "e008",
+      "escalate": false,
+      "label": "spam",
+      "priority": null,
+      "reply_required": false,
+      "should_archive": false,
+      "should_delete": true
+    },
+    {
+      "email_id": "e009",
+      "escalate": false,
+      "label": "support",
+      "priority": null,
+      "reply_required": true,
+      "should_archive": false,
+      "should_delete": false
+    },
+    {
+      "email_id": "e010",
+      "escalate": false,
+      "label": "general",
+      "priority": null,
+      "reply_required": false,
+      "should_archive": true,
+      "should_delete": false
+    }
+  ],
+  "task_id": "categorize_easy"
+}

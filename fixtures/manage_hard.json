@@ -1,0 +1,496 @@
+{
+  "checksum": "4c79d4c0ecddd6d926d9e37e2097c844cf1b109aa40c0be97e2c8d9735bb7538",
+  "emails": [
+    {
+      "attachments": [],
+      "body": "The payment gateway has been down for 20 minutes. All checkout attempts are failing. Revenue impact is critical.",
+      "id": "h001",
+      "labels": [],
+      "sender": "ops@company.com",
+      "subject": "URGENT: Payment gateway down \u2014 all transactions failing",
+      "thread_id": "th001",
+      "timestamp": "2024-01-17T07:00:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "Complete our 2-minute survey and win a $500 Amazon gift card! Click here to start.",
+      "id": "h002",
+      "labels": [],
+      "sender": "surveys@marketing-blast.net",
+      "subject": "Congratulations \u2014 you've been selected for a survey",
+      "thread_id": "th002",
+      "timestamp": "2024-01-17T07:15:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "I ordered the wrong size and would like a full refund. Order was placed 3 days ago.",
+      "id": "h003",
+      "labels": [],
+      "sender": "frank.miller@customer.com",
+      "subject": "Refund request for order #77432",
+      "thread_id": "th003",
+      "timestamp": "2024-01-17T07:30:00Z"
+    },
+    {
+      "attachments": [
+        "q1_budget.xlsx"
+      ],
+      "body": "Please review and approve the Q1 budget proposal attached. Deadline is end of week.",
+      "id": "h004",
+      "labels": [],
+      "sender": "cfo@company.com",
+      "subject": "Q1 budget approval needed",
+      "thread_id": "th004",
+      "timestamp": "2024-01-17T08:00:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "We detected a login attempt from an unrecognized IP address in Russia. Please verify your account immediately.",
+      "id": "h005",
+      "labels": [],
+      "sender": "security@company.com",
+      "subject": "Suspicious login attempt on your account",
+      "thread_id": "th005",
+      "timestamp": "2024-01-17T08:15:00Z"
+    },
+    {
+      "attachments": [
+        "invoice_jan.pdf"
+      ],
+      "body": "Your monthly invoice for $299 is attached. Payment will be auto-charged on Jan 20.",
+      "id": "h006",
+      "labels": [],
+      "sender": "billing@vendor.com",
+      "subject": "Monthly subscription invoice \u2014 $299",
+      "thread_id": "th006",
+      "timestamp": "2024-01-17T08:30:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "You've been randomly selected to receive a free iPhone 15! Act now before this offer expires.",
+      "id": "h007",
+      "labels": [],
+      "sender": "giveaway@prize-central.biz",
+      "subject": "Free iPhone 15 \u2014 claim yours now",
+      "thread_id": "th007",
+      "timestamp": "2024-01-17T08:45:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "We have received a GDPR data export request from customer ID 4421. Must be fulfilled within 72 hours.",
+      "id": "h008",
+      "labels": [],
+      "sender": "legal@company.com",
+      "subject": "Customer data export request \u2014 GDPR",
+      "thread_id": "th008",
+      "timestamp": "2024-01-17T09:00:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "A user left a 1-star review: 'App crashes every time I try to upload a photo. Completely unusable.'",
+      "id": "h009",
+      "labels": [],
+      "sender": "appstore-noreply@apple.com",
+      "subject": "App store review: 1 star \u2014 terrible experience",
+      "thread_id": "th009",
+      "timestamp": "2024-01-17T09:15:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "Your order for pens, notebooks, and sticky notes has been confirmed. Delivery expected in 3-5 days.",
+      "id": "h010",
+      "labels": [],
+      "sender": "orders@officesupplies.com",
+      "subject": "Office supplies order confirmation",
+      "thread_id": "th010",
+      "timestamp": "2024-01-17T09:30:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "The production database disk is at 95% capacity. Immediate action required to prevent data loss.",
+      "id": "h011",
+      "labels": [],
+      "sender": "alerts@monitoring.io",
+      "subject": "Critical: database disk usage at 95%",
+      "thread_id": "th011",
+      "timestamp": "2024-01-17T10:00:00Z"
+    },
+    {
+      "attachments": [
+        "partnership_proposal.pdf"
+      ],
+      "body": "We'd like to explore a strategic partnership. Please review our proposal and let us know your thoughts.",
+      "id": "h012",
+      "labels": [],
+      "sender": "partnerships@techcorp.com",
+      "subject": "Partnership proposal from TechCorp",
+      "thread_id": "th012",
+      "timestamp": "2024-01-17T10:15:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "I was charged twice for my subscription this month. Please refund the duplicate charge immediately.",
+      "id": "h013",
+      "labels": [],
+      "sender": "grace.kim@customer.com",
+      "subject": "Duplicate charge on my account \u2014 please fix",
+      "thread_id": "th013",
+      "timestamp": "2024-01-17T10:30:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "No experience needed! Work from home and earn up to $500 per day. Limited spots available.",
+      "id": "h014",
+      "labels": [],
+      "sender": "jobs@easy-money-online.net",
+      "subject": "Earn $500/day working from home",
+      "thread_id": "th014",
+      "timestamp": "2024-01-17T10:45:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "Our annual SOC 2 compliance audit is scheduled for February 15. Please prepare documentation.",
+      "id": "h015",
+      "labels": [],
+      "sender": "compliance@company.com",
+      "subject": "Compliance audit scheduled for next month",
+      "thread_id": "th015",
+      "timestamp": "2024-01-17T11:00:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "I'd love to see a dark mode option in the mobile app. Many users have been asking for this.",
+      "id": "h016",
+      "labels": [],
+      "sender": "henry.wang@customer.com",
+      "subject": "Feature request: dark mode for mobile app",
+      "thread_id": "th016",
+      "timestamp": "2024-01-17T11:15:00Z"
+    },
+    {
+      "attachments": [
+        "memory_profile.txt"
+      ],
+      "body": "Memory usage on prod-server-02 has been climbing steadily for 6 hours. Possible memory leak.",
+      "id": "h017",
+      "labels": [],
+      "sender": "alerts@monitoring.io",
+      "subject": "Server memory leak detected in production",
+      "thread_id": "th017",
+      "timestamp": "2024-01-17T11:30:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "Annual performance reviews are due by January 31. Please complete your self-assessment in the HR portal.",
+      "id": "h018",
+      "labels": [],
+      "sender": "hr@company.com",
+      "subject": "Annual performance review reminder",
+      "thread_id": "th018",
+      "timestamp": "2024-01-17T12:00:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "Invoice #3301 for $1,200 is now 60 days overdue. Please pay immediately to avoid service suspension.",
+      "id": "h019",
+      "labels": [],
+      "sender": "billing@vendor2.com",
+      "subject": "Overdue invoice \u2014 final notice",
+      "thread_id": "th019",
+      "timestamp": "2024-01-17T12:15:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "Invest in our exclusive crypto fund and earn 300% returns in 30 days. Guaranteed profits!",
+      "id": "h020",
+      "labels": [],
+      "sender": "invest@crypto-profits.biz",
+      "subject": "Crypto investment opportunity \u2014 300% returns",
+      "thread_id": "th020",
+      "timestamp": "2024-01-17T12:30:00Z"
+    },
+    {
+      "attachments": [
+        "error_log.txt"
+      ],
+      "body": "Since your v2.3 release our integration has been returning 400 errors. This is blocking our deployment.",
+      "id": "h021",
+      "labels": [],
+      "sender": "ivan.petrov@partner.com",
+      "subject": "API integration broken after your last update",
+      "thread_id": "th021",
+      "timestamp": "2024-01-17T13:00:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "We're planning a team building day on March 8. More details to follow. Please save the date!",
+      "id": "h022",
+      "labels": [],
+      "sender": "events@company.com",
+      "subject": "Team building event \u2014 save the date",
+      "thread_id": "th022",
+      "timestamp": "2024-01-17T13:15:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "An API key belonging to user john.doe@company.com has been used from 3 different countries in the last hour.",
+      "id": "h023",
+      "labels": [],
+      "sender": "security@company.com",
+      "subject": "Unauthorized API key usage detected",
+      "thread_id": "th023",
+      "timestamp": "2024-01-17T13:30:00Z"
+    },
+    {
+      "attachments": [
+        "renewal_receipt.pdf"
+      ],
+      "body": "Your annual subscription has been renewed for $1,188. Thank you for your continued business.",
+      "id": "h024",
+      "labels": [],
+      "sender": "billing@saas-tool.com",
+      "subject": "Subscription renewal confirmation",
+      "thread_id": "th024",
+      "timestamp": "2024-01-17T14:00:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "After the account migration last week I can no longer see my historical reports. Please help urgently.",
+      "id": "h025",
+      "labels": [],
+      "sender": "julia.santos@customer.com",
+      "subject": "Can't access my data after account migration",
+      "thread_id": "th025",
+      "timestamp": "2024-01-17T14:15:00Z"
+    }
+  ],
+  "fixture_version": "1.0.0",
+  "ground_truth": [
+    {
+      "email_id": "h001",
+      "escalate": true,
+      "label": "support",
+      "priority": 1,
+      "reply_required": true,
+      "should_archive": false,
+      "should_delete": false
+    },
+    {
+      "email_id": "h002",
+      "escalate": false,
+      "label": "spam",
+      "priority": 3,
+      "reply_required": false,
+      "should_archive": false,
+      "should_delete": true
+    },
+    {
+      "email_id": "h003",
+      "escalate": false,
+      "label": "billing",
+      "priority": 2,
+      "reply_required": true,
+      "should_archive": false,
+      "should_delete": false
+    },
+    {
+      "email_id": "h004",
+      "escalate": false,
+      "label": "general",
+      "priority": 2,
+      "reply_required": true,
+      "should_archive": true,
+      "should_delete": false
+    },
+    {
+      "email_id": "h005",
+      "escalate": true,
+      "label": "support",
+      "priority": 1,
+      "reply_required": true,
+      "should_archive": false,
+      "should_delete": false
+    },
+    {
+      "email_id": "h006",
+      "escalate": false,
+      "label": "billing",
+      "priority": 2,
+      "reply_required": false,
+      "should_archive": true,
+      "should_delete": false
+    },
+    {
+      "email_id": "h007",
+      "escalate": false,
+      "label": "spam",
+      "priority": 3,
+      "reply_required": false,
+      "should_archive": false,
+      "should_delete": true
+    },
+    {
+      "email_id": "h008",
+      "escalate": true,
+      "label": "support",
+      "priority": 1,
+      "reply_required": true,
+      "should_archive": false,
+      "should_delete": false
+    },
+    {
+      "email_id": "h009",
+      "escalate": false,
+      "label": "support",
+      "priority": 2,
+      "reply_required": true,
+      "should_archive": false,
+      "should_delete": false
+    },
+    {
+      "email_id": "h010",
+      "escalate": false,
+      "label": "general",
+      "priority": 3,
+      "reply_required": false,
+      "should_archive": true,
+      "should_delete": false
+    },
+    {
+      "email_id": "h011",
+      "escalate": true,
+      "label": "support",
+      "priority": 1,
+      "reply_required": true,
+      "should_archive": false,
+      "should_delete": false
+    },
+    {
+      "email_id": "h012",
+      "escalate": false,
+      "label": "general",
+      "priority": 2,
+      "reply_required": true,
+      "should_archive": true,
+      "should_delete": false
+    },
+    {
+      "email_id": "h013",
+      "escalate": false,
+      "label": "billing",
+      "priority": 1,
+      "reply_required": true,
+      "should_archive": false,
+      "should_delete": false
+    },
+    {
+      "email_id": "h014",
+      "escalate": false,
+      "label": "spam",
+      "priority": 3,
+      "reply_required": false,
+      "should_archive": false,
+      "should_delete": true
+    },
+    {
+      "email_id": "h015",
+      "escalate": false,
+      "label": "general",
+      "priority": 2,
+      "reply_required": false,
+      "should_archive": true,
+      "should_delete": false
+    },
+    {
+      "email_id": "h016",
+      "escalate": false,
+      "label": "support",
+      "priority": 3,
+      "reply_required": true,
+      "should_archive": true,
+      "should_delete": false
+    },
+    {
+      "email_id": "h017",
+      "escalate": true,
+      "label": "support",
+      "priority": 1,
+      "reply_required": true,
+      "should_archive": false,
+      "should_delete": false
+    },
+    {
+      "email_id": "h018",
+      "escalate": false,
+      "label": "general",
+      "priority": 2,
+      "reply_required": false,
+      "should_archive": true,
+      "should_delete": false
+    },
+    {
+      "email_id": "h019",
+      "escalate": false,
+      "label": "billing",
+      "priority": 1,
+      "reply_required": true,
+      "should_archive": false,
+      "should_delete": false
+    },
+    {
+      "email_id": "h020",
+      "escalate": false,
+      "label": "spam",
+      "priority": 3,
+      "reply_required": false,
+      "should_archive": false,
+      "should_delete": true
+    },
+    {
+      "email_id": "h021",
+      "escalate": true,
+      "label": "support",
+      "priority": 1,
+      "reply_required": true,
+      "should_archive": false,
+      "should_delete": false
+    },
+    {
+      "email_id": "h022",
+      "escalate": false,
+      "label": "general",
+      "priority": 3,
+      "reply_required": false,
+      "should_archive": true,
+      "should_delete": false
+    },
+    {
+      "email_id": "h023",
+      "escalate": true,
+      "label": "support",
+      "priority": 1,
+      "reply_required": true,
+      "should_archive": false,
+      "should_delete": false
+    },
+    {
+      "email_id": "h024",
+      "escalate": false,
+      "label": "billing",
+      "priority": 2,
+      "reply_required": false,
+      "should_archive": true,
+      "should_delete": false
+    },
+    {
+      "email_id": "h025",
+      "escalate": false,
+      "label": "support",
+      "priority": 1,
+      "reply_required": true,
+      "should_archive": false,
+      "should_delete": false
+    }
+  ],
+  "task_id": "manage_hard"
+}

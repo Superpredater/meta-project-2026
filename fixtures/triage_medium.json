@@ -1,0 +1,300 @@
+{
+  "checksum": "ba452220c95f66cfe844e7c869a3eff5984d6e1d2f718a112982fa5a1c9bc1c3",
+  "emails": [
+    {
+      "attachments": [],
+      "body": "Our main production server is unresponsive. Customers are reporting 503 errors. Need immediate action.",
+      "id": "m001",
+      "labels": [],
+      "sender": "ops@company.com",
+      "subject": "Production server down \u2014 customers affected",
+      "thread_id": "tm001",
+      "timestamp": "2024-01-16T07:00:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "Here's what's new this week: improved dashboard, faster exports, and new integrations.",
+      "id": "m002",
+      "labels": [],
+      "sender": "newsletter@product.io",
+      "subject": "Weekly newsletter: product updates",
+      "thread_id": "tm002",
+      "timestamp": "2024-01-16T07:30:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "A critical CVE has been found in lodash 4.17.20. Please update to 4.17.21 immediately.",
+      "id": "m003",
+      "labels": [],
+      "sender": "security@github.com",
+      "subject": "Security vulnerability in your dependency",
+      "thread_id": "tm003",
+      "timestamp": "2024-01-16T08:00:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "Hi, something came up on Wednesday. Would Thursday at 2pm work for you instead?",
+      "id": "m004",
+      "labels": [],
+      "sender": "david.lee@partner.com",
+      "subject": "Can we reschedule our call to Thursday?",
+      "thread_id": "tm004",
+      "timestamp": "2024-01-16T08:30:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "We have detected unauthorized access to customer data. Legal and security teams must convene today.",
+      "id": "m005",
+      "labels": [],
+      "sender": "legal@company.com",
+      "subject": "Data breach notification \u2014 action required",
+      "thread_id": "tm005",
+      "timestamp": "2024-01-16T09:00:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "Please submit your Q4 expense report by end of day Friday. Use the form in the portal.",
+      "id": "m006",
+      "labels": [],
+      "sender": "finance@company.com",
+      "subject": "Your Q4 expense report is due Friday",
+      "thread_id": "tm006",
+      "timestamp": "2024-01-16T09:30:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "Customer Jane Doe reports being charged twice for her January subscription. Needs resolution ASAP.",
+      "id": "m007",
+      "labels": [],
+      "sender": "support@company.com",
+      "subject": "Customer complaint: billing error on account #9921",
+      "thread_id": "tm007",
+      "timestamp": "2024-01-16T10:00:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "This week's lunch menu: Mon - pasta, Tue - salad bar, Wed - tacos, Thu - soup, Fri - pizza.",
+      "id": "m008",
+      "labels": [],
+      "sender": "cafeteria@company.com",
+      "subject": "Lunch menu for the week",
+      "thread_id": "tm008",
+      "timestamp": "2024-01-16T10:30:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "Your API is hitting rate limits on the payment gateway. Transactions are queuing up.",
+      "id": "m009",
+      "labels": [],
+      "sender": "alerts@monitoring.io",
+      "subject": "API rate limit exceeded \u2014 service degraded",
+      "thread_id": "tm009",
+      "timestamp": "2024-01-16T11:00:00Z"
+    },
+    {
+      "attachments": [
+        "onboarding_checklist.pdf"
+      ],
+      "body": "Welcome to the team! Please complete the attached onboarding checklist within your first week.",
+      "id": "m010",
+      "labels": [],
+      "sender": "hr@company.com",
+      "subject": "New hire onboarding checklist",
+      "thread_id": "tm010",
+      "timestamp": "2024-01-16T11:30:00Z"
+    },
+    {
+      "attachments": [
+        "contract_renewal.pdf"
+      ],
+      "body": "The vendor contract for our cloud services expires tomorrow. Please sign the renewal immediately.",
+      "id": "m011",
+      "labels": [],
+      "sender": "procurement@company.com",
+      "subject": "Urgent: contract renewal deadline tomorrow",
+      "thread_id": "tm011",
+      "timestamp": "2024-01-16T12:00:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "Great job on the presentation! The slides were clear and the demo went smoothly.",
+      "id": "m012",
+      "labels": [],
+      "sender": "emily.chen@company.com",
+      "subject": "Feedback on last week's presentation",
+      "thread_id": "tm012",
+      "timestamp": "2024-01-16T12:30:00Z"
+    },
+    {
+      "attachments": [
+        "backup_error.log"
+      ],
+      "body": "The nightly database backup job failed at 02:15 UTC. Please investigate and re-run manually.",
+      "id": "m013",
+      "labels": [],
+      "sender": "alerts@monitoring.io",
+      "subject": "Database backup failed last night",
+      "thread_id": "tm013",
+      "timestamp": "2024-01-16T13:00:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "You're invited to the quarterly all-hands meeting next Tuesday at 10am. Attendance is mandatory.",
+      "id": "m014",
+      "labels": [],
+      "sender": "ceo@company.com",
+      "subject": "Invitation: company all-hands next Tuesday",
+      "thread_id": "tm014",
+      "timestamp": "2024-01-16T13:30:00Z"
+    },
+    {
+      "attachments": [],
+      "body": "Your SSL certificate for api.company.com expires in 3 days. Renew now to avoid downtime.",
+      "id": "m015",
+      "labels": [],
+      "sender": "alerts@monitoring.io",
+      "subject": "SSL certificate expiring in 3 days",
+      "thread_id": "tm015",
+      "timestamp": "2024-01-16T14:00:00Z"
+    }
+  ],
+  "fixture_version": "1.0.0",
+  "ground_truth": [
+    {
+      "email_id": "m001",
+      "escalate": true,
+      "label": "support",
+      "priority": 1,
+      "reply_required": true,
+      "should_archive": false,
+      "should_delete": false
+    },
+    {
+      "email_id": "m002",
+      "escalate": false,
+      "label": "general",
+      "priority": 3,
+      "reply_required": false,
+      "should_archive": true,
+      "should_delete": false
+    },
+    {
+      "email_id": "m003",
+      "escalate": true,
+      "label": "support",
+      "priority": 1,
+      "reply_required": true,
+      "should_archive": false,
+      "should_delete": false
+    },
+    {
+      "email_id": "m004",
+      "escalate": false,
+      "label": "general",
+      "priority": 2,
+      "reply_required": true,
+      "should_archive": false,
+      "should_delete": false
+    },
+    {
+      "email_id": "m005",
+      "escalate": true,
+      "label": "support",
+      "priority": 1,
+      "reply_required": true,
+      "should_archive": false,
+      "should_delete": false
+    },
+    {
+      "email_id": "m006",
+      "escalate": false,
+      "label": "billing",
+      "priority": 2,
+      "reply_required": false,
+      "should_archive": true,
+      "should_delete": false
+    },
+    {
+      "email_id": "m007",
+      "escalate": false,
+      "label": "billing",
+      "priority": 1,
+      "reply_required": true,
+      "should_archive": false,
+      "should_delete": false
+    },
+    {
+      "email_id": "m008",
+      "escalate": false,
+      "label": "general",
+      "priority": 3,
+      "reply_required": false,
+      "should_archive": false,
+      "should_delete": true
+    },
+    {
+      "email_id": "m009",
+      "escalate": true,
+      "label": "support",
+      "priority": 1,
+      "reply_required": true,
+      "should_archive": false,
+      "should_delete": false
+    },
+    {
+      "email_id": "m010",
+      "escalate": false,
+      "label": "general",
+      "priority": 2,
+      "reply_required": false,
+      "should_archive": true,
+      "should_delete": false
+    },
+    {
+      "email_id": "m011",
+      "escalate": false,
+      "label": "billing",
+      "priority": 1,
+      "reply_required": true,
+      "should_archive": false,
+      "should_delete": false
+    },
+    {
+      "email_id": "m012",
+      "escalate": false,
+      "label": "general",
+      "priority": 3,
+      "reply_required": false,
+      "should_archive": true,
+      "should_delete": false
+    },
+    {
+      "email_id": "m013",
+      "escalate": false,
+      "label": "support",
+      "priority": 1,
+      "reply_required": true,
+      "should_archive": false,
+      "should_delete": false
+    },
+    {
+      "email_id": "m014",
+      "escalate": false,
+      "label": "general",
+      "priority": 2,
+      "reply_required": false,
+      "should_archive": true,
+      "should_delete": false
+    },
+    {
+      "email_id": "m015",
+      "escalate": false,
+      "label": "support",
+      "priority": 1,
+      "reply_required": true,
+      "should_archive": false,
+      "should_delete": false
+    }
+  ],
+  "task_id": "triage_medium"
+}
