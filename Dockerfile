@@ -13,6 +13,6 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 # Copy built frontend into static/
-COPY --from=frontend-builder /app/frontend/../static ./static
+COPY --from=frontend-builder /app/frontend/dist ./static
 EXPOSE 7860
-CMD ["python", "inference.py"]
+CMD ["uvicorn", "openenv_email_triage.api:app", "--host", "0.0.0.0", "--port", "7860"]
