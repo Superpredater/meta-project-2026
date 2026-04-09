@@ -28,9 +28,9 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Environment variables with defaults
-API_BASE_URL = os.getenv("API_BASE_URL", "https://api.openai.com/v1")
-MODEL_NAME = os.getenv("MODEL_NAME", "gpt-4o-mini")
-HF_TOKEN = os.getenv("HF_TOKEN")  # Optional
+API_BASE_URL = os.getenv("API_BASE_URL", "https://router.huggingface.co/v1")  # HF Router
+MODEL_NAME = os.getenv("MODEL_NAME", "Qwen/Qwen2.5-72B-Instruct")  # HF Model
+HF_TOKEN = os.getenv("HF_TOKEN")  # Required
 LOCAL_IMAGE_NAME = os.getenv("LOCAL_IMAGE_NAME")  # Optional, for from_docker_image()
 
 TASKS = ["categorize_easy", "triage_medium", "manage_hard"]
@@ -61,9 +61,9 @@ Only include fields relevant to the chosen operation. Respond with valid JSON on
 
 def _get_client() -> OpenAI:
     """Create OpenAI client configured via environment variables."""
-    api_key = os.environ.get("OPENAI_API_KEY")
+    api_key = os.environ.get("HF_TOKEN")
     if not api_key:
-        raise EnvironmentError("OPENAI_API_KEY environment variable is not set")
+        raise EnvironmentError("HF_TOKEN environment variable is not set")
     return OpenAI(api_key=api_key, base_url=API_BASE_URL)
 
 
