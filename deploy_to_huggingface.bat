@@ -13,7 +13,7 @@ pause
 echo.
 echo === Step 1: Add HuggingFace as git remote ===
 git remote remove huggingface 2>nul
-git remote add huggingface https://huggingface.co/spaces/openenv/openenv-email-triage
+git remote add huggingface https://huggingface.co/spaces/Superpredater231/openenv-email-triage
 if errorlevel 1 (
     echo ERROR: Failed to add remote
     pause
@@ -58,7 +58,7 @@ echo SUCCESS! Code pushed to HuggingFace
 echo ========================================
 echo.
 echo Next steps:
-echo   1. Go to: https://huggingface.co/spaces/openenv/openenv-email-triage
+echo   1. Go to: https://huggingface.co/spaces/Superpredater231/openenv-email-triage
 echo   2. Wait for build to complete (2-5 minutes)
 echo   3. Test: curl -X POST https://YOUR_SPACE.hf.space/reset
 echo   4. Run: openenv validate openenv-email-triage
