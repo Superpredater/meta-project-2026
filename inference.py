@@ -11,18 +11,35 @@ from __future__ import annotations
 import json
 import os
 import sys
+import time
 from datetime import datetime, timezone
 
-from openai import OpenAI
+try:
+    from openai import OpenAI
+except ImportError as exc:
+    raise SystemExit(
+        "Unable to import 'openai'. Install dependencies with "
+        "'pip install -r requirements.txt' or 'pip install -e .'. "
+        f"Original error: {exc}"
+    ) from exc
 
-from openenv_email_triage.env import EmailTriageEnv
-from openenv_email_triage.models import Action, Operation
+try:
+    from openenv_email_triage.env import EmailTriageEnv
+    from openenv_email_triage.models import Action, Operation, Reward
+except ImportError as exc:
+    raise SystemExit(
+        "Unable to import 'openenv_email_triage'. Install dependencies with "
+        "'pip install -r requirements.txt' or 'pip install -e .'. "
+        f"Original error: {exc}"
+    ) from exc
 
 # Environment variables with defaults
 API_BASE_URL = os.getenv("API_BASE_URL", "https://router.huggingface.co/v1")  # HF Router
 MODEL_NAME = os.getenv("MODEL_NAME", "Qwen/Qwen2.5-72B-Instruct")  # HF Model
-HF_TOKEN = os.getenv("HF_TOKEN")  # Required
 LOCAL_IMAGE_NAME = os.getenv("LOCAL_IMAGE_NAME")  # Optional, for from_docker_image()
+API_TIMEOUT_SECONDS = float(os.getenv("API_TIMEOUT_SECONDS", "60"))
+API_MAX_RETRIES = max(1, int(os.getenv("API_MAX_RETRIES", "3")))
+API_RETRY_DELAY_SECONDS = float(os.getenv("API_RETRY_DELAY_SECONDS", "1"))
 
 TASKS = ["categorize_easy", "triage_medium", "manage_hard"]
 
@@ -52,9 +69,12 @@ Only include fields relevant to the chosen operation. Respond with valid JSON on
 
 def _get_client() -> OpenAI:
     """Create OpenAI client configured via environment variables."""
-    api_key = os.environ.get("HF_TOKEN")
+    api_key = (os.environ.get("HF_TOKEN") or "").strip()
     if not api_key:
-        raise EnvironmentError("HF_TOKEN environment variable is not set")
+        raise EnvironmentError(
+            "HF_TOKEN environment variable is missing or empty. "
+            "Set HF_TOKEN to a valid HuggingFace token before running inference."
+        )
     return OpenAI(api_key=api_key, base_url=API_BASE_URL)
 
 
@@ -67,6 +87,42 @@ def _parse_action(content: str) -> Action:
         return Action(operation=Operation.skip)
 
 
+def _request_action_with_retry(
+    client: OpenAI,
+    task_id: str,
+    step_num: int,
+    obs_json: str,
+) -> Action:
+    """Request a model action with timeout and retry handling."""
+    for attempt in range(1, API_MAX_RETRIES + 1):
+        try:
+            response = client.chat.completions.create(
+                model=MODEL_NAME,
+                messages=[
+                    {"role": "system", "content": SYSTEM_PROMPT},
+                    {"role": "user", "content": obs_json},
+                ],
+                temperature=0,
+                seed=42,
+                timeout=API_TIMEOUT_SECONDS,
+            )
+            content = response.choices[0].message.content or ""
+            return _parse_action(content)
+        except Exception as exc:
+            print(
+                (
+                    f"API error on task {task_id} step {step_num} "
+                    f"(attempt {attempt}/{API_MAX_RETRIES}): {exc}"
+                ),
+                file=sys.stderr,
+                flush=True,
+            )
+            if attempt < API_MAX_RETRIES:
+                time.sleep(API_RETRY_DELAY_SECONDS)
+
+    return Action(operation=Operation.skip)
+
+
 def run_inference(client: OpenAI) -> dict:
     """Run inference against all three tasks and return results dict."""
     env = EmailTriageEnv()
@@ -74,47 +130,41 @@ def run_inference(client: OpenAI) -> dict:
 
     for task_id in TASKS:
         print(f"[START] task={task_id}", flush=True)
-
-        obs = env.reset(task_id)
-        done = False
         step_num = 0
         episode_score = 0.0
+        reward: Reward | None = None
 
-        while not done:
-            step_num += 1
-            obs_json = obs.model_dump_json()
+        try:
+            obs = env.reset(task_id)
+            done = False
 
-            try:
-                response = client.chat.completions.create(
-                    model=MODEL_NAME,
-                    messages=[
-                        {"role": "system", "content": SYSTEM_PROMPT},
-                        {"role": "user", "content": obs_json},
-                    ],
-                    temperature=0,
-                    seed=42,
-                )
-                content = response.choices[0].message.content or ""
-                action = _parse_action(content)
-            except Exception as exc:
+            while not done:
+                step_num += 1
+                obs_json = obs.model_dump_json()
+                action = _request_action_with_retry(client, task_id, step_num, obs_json)
+                obs, reward, done, _ = env.step(action)
+                print(f"[STEP] step={step_num} reward={reward.score}", flush=True)
+
+            if reward is None:
                 print(
-                    f"API error on task {task_id} step {step_num}: {exc}",
+                    f"No reward produced for task {task_id}; defaulting score to 0.0.",
                     file=sys.stderr,
                     flush=True,
                 )
-                action = Action(operation=Operation.skip)
-
-            obs, reward, done, _ = env.step(action)
-            print(f"[STEP] step={step_num} reward={reward.score}", flush=True)
-            if done:
+            else:
                 episode_score = reward.score
-
-        task_scores[task_id] = round(episode_score, 4)
-
-        print(
-            f"[END] task={task_id} score={episode_score} steps={step_num}",
-            flush=True,
-        )
+        except Exception as exc:
+            print(
+                f"Task error on {task_id}: {exc}. Continuing to next task.",
+                file=sys.stderr,
+                flush=True,
+            )
+        finally:
+            task_scores[task_id] = round(episode_score, 4)
+            print(
+                f"[END] task={task_id} score={episode_score} steps={step_num}",
+                flush=True,
+            )
 
     mean_score = round(sum(task_scores.values()) / len(task_scores), 4)
 
