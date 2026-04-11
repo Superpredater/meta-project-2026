@@ -9,7 +9,6 @@ Usage::
 from __future__ import annotations
 
 import json
-import logging
 import os
 import sys
 from datetime import datetime, timezone
@@ -18,14 +17,6 @@ from openai import OpenAI
 
 from openenv_email_triage.env import EmailTriageEnv
 from openenv_email_triage.models import Action, Operation
-
-# Configure logging to stdout with structured format
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(message)s",
-    stream=sys.stdout,
-)
-logger = logging.getLogger(__name__)
 
 # Environment variables with defaults
 API_BASE_URL = os.getenv("API_BASE_URL", "https://router.huggingface.co/v1")  # HF Router
@@ -82,17 +73,16 @@ def run_inference(client: OpenAI) -> dict:
     task_scores: dict[str, float] = {}
 
     for task_id in TASKS:
-        logger.info("START task_id=%s model=%s", task_id, MODEL_NAME)
+        print(f"[START] task={task_id}", flush=True)
 
         obs = env.reset(task_id)
         done = False
         step_num = 0
+        episode_score = 0.0
 
         while not done:
             step_num += 1
             obs_json = obs.model_dump_json()
-
-            logger.info("STEP task_id=%s step_number=%d", task_id, step_num)
 
             try:
                 response = client.chat.completions.create(
@@ -107,15 +97,24 @@ def run_inference(client: OpenAI) -> dict:
                 content = response.choices[0].message.content or ""
                 action = _parse_action(content)
             except Exception as exc:
-                logger.error("API error on task %s step %d: %s", task_id, step_num, exc)
+                print(
+                    f"API error on task {task_id} step {step_num}: {exc}",
+                    file=sys.stderr,
+                    flush=True,
+                )
                 action = Action(operation=Operation.skip)
 
             obs, reward, done, _ = env.step(action)
+            print(f"[STEP] step={step_num} reward={reward.score}", flush=True)
+            if done:
+                episode_score = reward.score
 
-        episode_score = reward.score  # type: ignore[possibly-undefined]
         task_scores[task_id] = round(episode_score, 4)
 
-        logger.info("END task_id=%s score=%.4f", task_id, episode_score)
+        print(
+            f"[END] task={task_id} score={episode_score} steps={step_num}",
+            flush=True,
+        )
 
     mean_score = round(sum(task_scores.values()) / len(task_scores), 4)
 
